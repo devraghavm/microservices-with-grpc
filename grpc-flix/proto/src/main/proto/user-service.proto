@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+import "common/common.proto";
+option java_multiple_files = true;
+option java_package = "com.raghav.grpcflix.user";
+
+message UserSearchRequest {
+  string login_id = 1;
+}
+
+message UserSearchResponse {
+  string login_id = 1;
+  string name = 2;
+  common.Genre genre = 3;
+}
+
+message UserGenreUpdateRequest {
+  string login_id = 1;
+  common.Genre genre = 2;
+}
+
+service UserService {
+  rpc getUserGenre(UserSearchRequest) returns (UserSearchResponse);
+  rpc updateUserGenre(UserGenreUpdateRequest) returns (UserSearchResponse);
+}
+

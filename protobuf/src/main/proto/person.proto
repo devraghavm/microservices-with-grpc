@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "common/address.proto";
+import "common/car.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "com.raghav.models";
+
+message Person {
+  // Tags 1 - 15: uses 1 byte (use for frequently used fields)
+  // Tags 16 - 2047: uses 2 bytes
+  string name = 1; // 1 is tag
+  google.protobuf.Int32Value age = 2;
+  common.Address address = 3;
+  repeated common.Car car = 4;
+}
+// JSON Mapping
+// "name": "Raghav"
+// "age": 37
+
+// Protobuf Mapping (Uses Tags Instead of fields)
+// 1="Raghav"
+// 2=37

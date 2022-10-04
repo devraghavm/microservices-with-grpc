@@ -1,0 +1,10 @@
+grpc:
+  client:
+    user-service:
+      address: static://localhost:6565
+      negotiationType: plaintext
+    movie-service:
+      address: static://localhost:7575
+      negotiationType: TLS
+      security:
+        trustCertCollection: file:/Users/raghav/Develop/Workspaces/Udemy/microservices-with-grpc/ssl_tls/ca.cert.pem

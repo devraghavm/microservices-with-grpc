@@ -1,0 +1,10 @@
+grpc:
+  server:
+    port: 7575
+    security:
+      enabled: true
+      certificate-chain: file:/Users/raghav/Develop/Workspaces/Udemy/microservices-with-grpc/ssl_tls/localhost.crt
+      private-key: file:/Users/raghav/Develop/Workspaces/Udemy/microservices-with-grpc/ssl_tls/localhost.pem
+spring:
+  jpa:
+    defer-datasource-initialization: true
